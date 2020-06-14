@@ -17,6 +17,7 @@ public class RecipeActionServiceImpl implements RecipeActionService {
 
     @Override
     public Action saveAction(Action action) {
+        System.out.println(String.format("Saving event message %s to DB...", action.getMessage()));
         this.recipeActionRepo.save(action);
         return action;
     }

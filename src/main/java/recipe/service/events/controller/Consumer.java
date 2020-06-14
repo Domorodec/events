@@ -20,7 +20,7 @@ public class Consumer {
 
     @KafkaListener(topics = "recipes", groupId = "group_id")
     public void consume(String message) {
-        logger.info(String.format("$$ -> Consumed Message -> %s", message));
+        logger.info(String.format("Kafka consumer event service -> %s", message));
         Action action = new Action( message, (int) (Math.random() * 65530), new Date());
         this.recipeActionService.saveAction(action);
     }
